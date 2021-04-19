@@ -6,7 +6,7 @@ const CounterDisplay = () => {
     console.log(number)
 
     return ( 
-        <h1>0</h1>
+        <h1>{number}</h1>
     );
 }
  
