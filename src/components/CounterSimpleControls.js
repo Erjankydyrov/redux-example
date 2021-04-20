@@ -20,12 +20,22 @@ const CounterSimpleControls = () => {
     dispatch({ type: "decrement_by_10" });
   }
 
+  function multiplyBy2Callback() {
+    dispatch({ type: "multiply_by_2" });
+  }
+  
+  function divideBy2Callback() {
+    dispatch({ type: "divide_by_2" });
+  }
+
   return (
     <div>
       <button onClick={incrementBy1Callback}>+1</button>
       <button onClick={decrementBy1Callback}>-1</button>
       <button onClick={incrementBy10Callback}>+10</button>
       <button onClick={decrementBy10Callback}>-10</button>
+      <button onClick={multiplyBy2Callback}>*2</button>
+      <button onClick={divideBy2Callback}>/2</button>
     </div>
   );
 };

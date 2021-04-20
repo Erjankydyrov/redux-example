@@ -11,7 +11,11 @@ const counterReducer = (state = initialState, action) => {
         case "increment_by_10":
             return { ...state, number: state.number + 10 }
         case "decrement_by_10":
-            return { ...state, number: state.number -10 }
+            return { ...state, number: state.number - 10 }
+        case "multiply_by_2":
+            return { ...state, number: state.number * 2 }
+        case "divide_by_2":
+            return { ...state, number: state.number / 2 }
     }
     
     return state;
