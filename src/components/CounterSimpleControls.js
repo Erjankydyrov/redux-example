@@ -28,6 +28,14 @@ const CounterSimpleControls = () => {
     dispatch({ type: "divide_by_2" });
   }
 
+  function resetCallback() {
+    dispatch({ type: "reset" });
+  }
+
+  function randomCallback() {
+    dispatch({ type: "random" });
+  }
+
   return (
     <div>
       <button onClick={incrementBy1Callback}>+1</button>
@@ -36,6 +44,8 @@ const CounterSimpleControls = () => {
       <button onClick={decrementBy10Callback}>-10</button>
       <button onClick={multiplyBy2Callback}>*2</button>
       <button onClick={divideBy2Callback}>/2</button>
+      <button onClick={resetCallback}>reset</button>
+      <button onClick={randomCallback}>random</button>
     </div>
   );
 };

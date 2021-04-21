@@ -16,6 +16,10 @@ const counterReducer = (state = initialState, action) => {
             return { ...state, number: state.number * 2 }
         case "divide_by_2":
             return { ...state, number: state.number / 2 }
+        case "reset":
+            return { ...state, number: state.number = 0}
+        case "random":
+            return { ...state, number: state.number = Math.floor(Math.random() * (1000 - 100)) + 0}
     }
     
     return state;
