@@ -1,5 +1,6 @@
 const initialState = {
     number: 0,
+    color: '#000000', 
 }
 
 const counterReducer = (state = initialState, action) => {
@@ -27,6 +28,10 @@ const counterReducer = (state = initialState, action) => {
             return newState;
         case "set_number2":
             newState.number = action.number;
+            return newState;
+
+        case "color":
+            newState.color = action.color;
             return newState;
     }
     
