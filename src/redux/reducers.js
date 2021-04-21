@@ -3,6 +3,7 @@ const initialState = {
 }
 
 const counterReducer = (state = initialState, action) => {
+    const newState = { ...state };
     switch (action.type) {
         case "increment_by_1":
             return { ...state, number: state.number + 1 }
@@ -20,6 +21,13 @@ const counterReducer = (state = initialState, action) => {
             return { ...state, number: state.number = 0}
         case "random":
             return { ...state, number: state.number = Math.floor(Math.random() * (1000 - 100)) + 0}
+
+        case "set_number":
+            newState.number = action.number;
+            return newState;
+        case "set_number2":
+            newState.number = action.number;
+            return newState;
     }
     
     return state;
