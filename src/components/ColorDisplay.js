@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import ColorSimple from "./ColorSimple";
 
 const ColorDisplay = () => {
   const color = useSelector(state => state.color);
