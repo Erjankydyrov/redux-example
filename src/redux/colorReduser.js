@@ -1,5 +1,5 @@
 const initialState = {
-    color: 'rgb(0, 0, 0)', 
+    color: '#000000', 
 }
 
 const colorReduser = (state = initialState, action) => {
@@ -7,7 +7,7 @@ const colorReduser = (state = initialState, action) => {
     switch (action.type) {
         
         case "color":
-            newState.color = `rgb(${action.color1}, ${action.color2}, ${action.color3})`;
+            newState.color = action.color;
             return newState;
     }
     
