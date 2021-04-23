@@ -5,16 +5,26 @@ import CounterAdvancedControls from './components/CounterAdvancedControls';
 import CounterDisplay from './components/CounterDisplay';
 import CounterSimpleControls from './components/CounterSimpleControls';
 import SliderControls from './components/SliderControls';
+import TextDisplay from './components/TextDisplay';
+import TextSimpleComtrols from './components/TextSimpleControls';
 
 function App() {
   return (
     <div className="App">
-      <ColorDisplay />
-      <ColorSimple />
-      <SliderControls />
-      <CounterDisplay />
-      <CounterSimpleControls />
-      <CounterAdvancedControls />
+      <div>
+        <TextDisplay />
+        <TextSimpleComtrols />
+      </div>
+      <div>
+        <ColorDisplay />
+        <ColorSimple />
+        <SliderControls />
+      </div>
+      <div>
+        <CounterDisplay />
+        <CounterSimpleControls />
+        <CounterAdvancedControls />
+      </div>
     </div>
   );
 }

@@ -6,10 +6,12 @@ import counterReducers from '../src/redux/counterReducers';
 import colorReduser from '../src/redux/colorReduser';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+import textRedusers from './redux/textRedusers';
 
 const rootReduser = combineReducers({
    counter: counterReducers, 
-   color: colorReduser 
+   color: colorReduser,
+   text: textRedusers,
   })
 const store = createStore(rootReduser)
 
