@@ -12,6 +12,9 @@ const textRedusers = (state = initialState, action)  => {
         case "size":
             newState.size = action.size;
             return newState;
+        case "reset":
+            newState.text = action.text = "";
+            return newState;
     }
     
     return state;

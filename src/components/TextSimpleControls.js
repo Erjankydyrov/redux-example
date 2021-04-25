@@ -13,11 +13,21 @@ const TextSimpleComtrols = () => {
     function sizeChangeCallBack() {
         dispatch({ type: "size", size: size })
     }
+
+    function resetChangeCallBack({ target }) {
+        dispatch({ type: "reset"})
+    }
+
     return ( 
         <div>
             <input type="text" onChange={textChangeCallBack} />
-            <input type="text" onChange={({ target }) => setSize(target.value)} />
-            <button onClick={sizeChangeCallBack}>add size</button>
+            <div>
+                <input type="text" onChange={({ target }) => setSize(target.value)} />
+                <button onClick={sizeChangeCallBack}>add size</button>
+            </div>
+            <div>
+                <button onClick={resetChangeCallBack}>reset</button>
+            </div>
         </div>
     );
 }
