@@ -17,7 +17,7 @@ const TextSimpleComtrols = () => {
     function resetChangeCallBack({ target }) {
         dispatch({ type: "reset"})
     }
-
+    
     return ( 
         <div>
             <input type="text" onChange={textChangeCallBack} />
