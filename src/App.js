@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { remove } from "./redux/actions/todo";
+import { add, remove } from "./redux/actions/todo";
 
 const App = () => {
   const items = useSelector(state => state);
