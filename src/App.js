@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { add, remove } from "./redux/actions/todo";
+import { delayedADD, delayedREMOVE } from "./redux/actions/todo";
 
 const App = () => {
   const items = useSelector(state => state);
   const dispatch = useDispatch();
 
   function onRemoveCallback(id) {
-    dispatch(remove(id));
+    dispatch(delayedREMOVE(id));
   }
 
   function onAddCallback(event) {
@@ -14,7 +14,7 @@ const App = () => {
 
     const data = new FormData(event.target);
     // dispatch({ type: "ADD", text: data.get('new') });
-    dispatch(add(data.get('new')));
+    dispatch(delayedADD(data.get('new')));
   }
 
   const results = Object.keys(items).map(id => (

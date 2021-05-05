@@ -10,10 +10,18 @@ export const remove = (id) => ({
     id: id,
 });
 
-export const delay = (text) => {
+export const delayedADD = (text) => {
   return (dispatch) => {
     setTimeout(() => {
       dispatch(add(text));
     }, 3000);
   }
+}
+
+export const delayedREMOVE = (id) => {
+    return (dispatch) => {
+      setTimeout(() => {
+        dispatch(remove(id));
+      }, 3000);
+    }
 }
