@@ -1,18 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
+import { remove } from "./redux/actions/todo";
 
 const App = () => {
   const items = useSelector(state => state);
   const dispatch = useDispatch();
 
   function onRemoveCallback(id) {
-    dispatch({ type: "REMOVE", id: id });
+    dispatch(remove(id));
   }
 
   function onAddCallback(event) {
     event.preventDefault();
 
     const data = new FormData(event.target);
-    dispatch({ type: "ADD", text: data.get('new') });
+    // dispatch({ type: "ADD", text: data.get('new') });
+    dispatch(add(data.get('new')));
   }
 
   const results = Object.keys(items).map(id => (
