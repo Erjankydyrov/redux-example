@@ -1,11 +1,12 @@
 import React from 'react';
-import { createStore, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import ReactDOM from 'react-dom';
 import App from './App';
 import counterReducers from '../src/redux/counterReducers';
 import colorReduser from '../src/redux/colorReduser';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import textRedusers from './redux/textRedusers';
 import todo from './redux/reducers/todo';
 
@@ -16,7 +17,7 @@ import todo from './redux/reducers/todo';
 //   })
 // const store = createStore(rootReduser)
 
-const store = createStore(todo);
+const store = createStore(todo, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
