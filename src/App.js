@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { delayedADD, delayedREMOVE } from "./redux/actions/todo";
+import { delayedADD, delayedREMOVE, toggle } from "./redux/actions/todo";
 
 const App = () => {
   const items = useSelector(state => state);
@@ -17,9 +17,16 @@ const App = () => {
     dispatch(delayedADD(data.get('new')));
   }
 
+  function onToggleCallback(id) {
+    dispatch(toggle(id));
+  }
+
   const results = Object.keys(items).map(id => (
     <li key={id}>
-      <span>{items[id]}</span>
+      <span onClick={() => onToggleCallback(id)} style={{
+        cursor: "pointer",
+        textDecoration: items[id].done ? "line-through" : "none"
+      }}>{items[id].text}</span>
       <button onClick={() => onRemoveCallback(id)}>Remove</button>
     </li>
   ));
